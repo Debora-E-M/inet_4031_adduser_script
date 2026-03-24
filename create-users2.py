@@ -15,7 +15,7 @@ import sys
 def main():
 
     # Ask user if they want dry-run mode
-    mode = input("Run in dry-run mode? (Y/N): ").strip().upper()
+    mode = input("Run in dry-run mode? (Y/N): ").strip().upper() if sys.stdin.isatty() else "Y"
 
     dry_run = (mode == "Y")
 
